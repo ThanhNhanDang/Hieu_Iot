@@ -1,0 +1,1 @@
+D:\workspaces\t4tek\2024\Pub_Sub_Mqtt\AppWinform\Service_RFID_BIG_READER_Ra\bin\x86\Debug\System.Diagnostics.DiagnosticSource.dll

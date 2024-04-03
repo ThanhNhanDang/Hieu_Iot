@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "BrO60/pTMvX1b9GUxa9WngAq9Bncn5OGCAK4GLs4onuId2gYg5WqNc8D1CVWoEfNRQzbgAu9v9jyv3ALfoaPFA==",
+  "success": true,
+  "projectFilePath": "D:\\workspaces\\t4tek\\2024\\Pub_Sub_Mqtt\\AppWinform\\AppWinform-main\\AppWinform_main.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\mqttnet\\4.3.3.952\\mqttnet.4.3.3.952.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.118\\stub.system.data.sqlite.core.netstandard.1.0.118.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\system.data.sqlite.core\\1.0.118\\system.data.sqlite.core.1.0.118.nupkg.sha512"
+  ],
+  "logs": []
+}
