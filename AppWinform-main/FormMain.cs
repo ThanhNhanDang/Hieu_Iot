@@ -16,6 +16,7 @@ using MQTTnet.Protocol;
 using Newtonsoft.Json;
 using AppWinform_main.DTO;
 using AppWinform_main.Entity;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace AppWinform_main
 {
@@ -42,6 +43,7 @@ namespace AppWinform_main
         private Thread _checkService = null;
         private byte _bcheckServiceIn = 0;
         private byte _bcheckServiceOut = 0;
+        private Thread _clockThread = null; // Khai báo một luồng để cập nhật thời gian
         #endregion
 
         #region Update Homepage
@@ -51,6 +53,7 @@ namespace AppWinform_main
         public FormMain()
         {
             InitializeComponent();
+            Initialize_clockThread();
         }
 
         #region Form Event
@@ -143,6 +146,10 @@ namespace AppWinform_main
                 _checkService = new Thread(new ThreadStart(CheckServiceThrd));
                 _checkService.Start();
                 _checkService.IsBackground = true;
+
+                _clockThread = new Thread(new ThreadStart(CheckServiceThrd));
+                _clockThread.Start();
+                _clockThread.IsBackground = true;
             });
         }
 
@@ -430,23 +437,23 @@ namespace AppWinform_main
             tagInfo = tagInfo ?? new Reader.TagInfo();
 
 
-           /* if (topic == TopicSub.IN_NOTFOUND_TAG)
-            {
-                label1.Invoke(new Action(() =>
-                {
-                    label1.Text = $"{DateTime.Now.ToString(SqliteDataAccess._timeFormat + ".ffff")} : {tagInfo.tid} [thẻ Không tồn tại] [LỐI VÀO]";
-                }));
-                return;
-            }
+            /* if (topic == TopicSub.IN_NOTFOUND_TAG)
+             {
+                 label1.Invoke(new Action(() =>
+                 {
+                     label1.Text = $"{DateTime.Now.ToString(SqliteDataAccess._timeFormat + ".ffff")} : {tagInfo.tid} [thẻ Không tồn tại] [LỐI VÀO]";
+                 }));
+                 return;
+             }
 
-            if (topic == TopicSub.OUT_NOTFOUND_TAG)
-            {
-                label1.Invoke(new Action(() =>
-                {
-                    label1.Text = $"{DateTime.Now.ToString(SqliteDataAccess._timeFormat + ".ffff")} : {tagInfo.epc} [thẻ Không tồn tại] [LỐI RA]";
-                }));
-                return;
-            }*/
+             if (topic == TopicSub.OUT_NOTFOUND_TAG)
+             {
+                 label1.Invoke(new Action(() =>
+                 {
+                     label1.Text = $"{DateTime.Now.ToString(SqliteDataAccess._timeFormat + ".ffff")} : {tagInfo.epc} [thẻ Không tồn tại] [LỐI RA]";
+                 }));
+                 return;
+             }*/
 
             if (topic == TopicSub.IN_MESSAGE)
             {
@@ -740,6 +747,45 @@ namespace AppWinform_main
                 }
             }
         }
+        private void Initialize_clockThread()
+        {
+            _clockThread = new Thread(UpdateClock); // Tạo một luồng mới
+            _clockThread.Start(); // Khởi động luồng
+        }
+
+        // Phương thức chạy trên luồng để cập nhật thời gian
+        private void UpdateClock()
+        {
+            while (true)
+            {
+                // Lấy thời gian hiện tại
+                DateTime currentTime = DateTime.Now;
+
+                // Format thời gian và hiển thị lên giao diện
+                string formattedDate = currentTime.ToString("dd-MM-yyyy");
+                string formattedTime = currentTime.ToString("hh:mm:ss tt");
+                UpdateTimeLabel(formattedDate, formattedTime); // Gọi phương thức để cập nhật giao diện
+
+                // Chờ 1 giây trước khi cập nhật thời gian tiếp theo
+                Thread.Sleep(1000);
+            }
+
+        }
+
+        // Phương thức để cập nhật label thời gian trên giao diện
+        private void UpdateTimeLabel(string date, string time)
+        {
+            Invoke(new MethodInvoker(() =>
+            {
+                lbDate.Text = date; // Cập nhật label ngày tháng năm
+                lbTime.Text = time; // Cập nhật label giờ phút giây
+            }));
+        }
         #endregion
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

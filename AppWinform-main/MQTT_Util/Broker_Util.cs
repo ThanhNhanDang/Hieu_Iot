@@ -10,7 +10,7 @@ namespace AppWinform_main.MQTT_Util
     {
         public const int PORT = 1883;
         public const string SERVER_IP = "127.0.0.1";
-        public const string USER_NAME = "nhandev";
-        public const string PASSWORD = "123456";
+        public const string USER_NAME = "admin";
+        public const string PASSWORD = "admin@123";
     }
 }

@@ -90,8 +90,8 @@
             ptbVaoBottom3 = new PictureBox();
             ptbVaoBottom2 = new PictureBox();
             ptbVaoBottom1 = new PictureBox();
-            label2 = new Label();
-            label3 = new Label();
+            lbTime = new Label();
+            lbDate = new Label();
             ptbMqttStatus = new PictureBox();
             ptbReaderOut1 = new PictureBox();
             ptbReaderIn1 = new PictureBox();
@@ -765,8 +765,8 @@
             panelBottom.Controls.Add(ptbVaoBottom3);
             panelBottom.Controls.Add(ptbVaoBottom2);
             panelBottom.Controls.Add(ptbVaoBottom1);
-            panelBottom.Controls.Add(label2);
-            panelBottom.Controls.Add(label3);
+            panelBottom.Controls.Add(lbTime);
+            panelBottom.Controls.Add(lbDate);
             panelBottom.Controls.Add(ptbMqttStatus);
             panelBottom.Controls.Add(ptbReaderOut1);
             panelBottom.Controls.Add(ptbReaderIn1);
@@ -886,27 +886,28 @@
             ptbVaoBottom1.TabStop = false;
             ptbVaoBottom1.Tag = "0";
             // 
-            // label2
+            // lbTime
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(1007, 27);
-            label2.Name = "label2";
-            label2.Size = new Size(122, 28);
-            label2.TabIndex = 28;
-            label2.Text = "12:25:33 AM";
+            lbTime.AutoSize = true;
+            lbTime.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbTime.ForeColor = Color.Black;
+            lbTime.Location = new Point(1007, 27);
+            lbTime.Name = "lbTime";
+            lbTime.Size = new Size(122, 28);
+            lbTime.TabIndex = 28;
+            lbTime.Text = "12:25:33 AM";
             // 
-            // label3
+            // lbDate
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(763, 27);
-            label3.Name = "label3";
-            label3.Size = new Size(142, 28);
-            label3.TabIndex = 27;
-            label3.Text = "T6 29-03-2024";
+            lbDate.AutoSize = true;
+            lbDate.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbDate.ForeColor = Color.Black;
+            lbDate.Location = new Point(763, 27);
+            lbDate.Name = "lbDate";
+            lbDate.Size = new Size(142, 28);
+            lbDate.TabIndex = 27;
+            lbDate.Text = "T4 03-03-2024";
+            lbDate.Click += label3_Click;
             // 
             // ptbMqttStatus
             // 
@@ -1010,8 +1011,8 @@
         private Button btnMinisize;
         private Label label1;
         private PictureBox pictureBox1;
-        private Label label2;
-        private Label label3;
+        private Label lbTime;
+        private Label lbDate;
         private PictureBox ptbMqttStatus;
         private PictureBox ptbReaderOut1;
         private PictureBox ptbReaderIn1;

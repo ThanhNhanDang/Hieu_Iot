@@ -14,4 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AppWinform_main
-build_property.ProjectDir = D:\workspaces\t4tek\2024\Pub_Sub_Mqtt\AppWinform\AppWinform-main\
+build_property.ProjectDir = C:\Users\MSI\Desktop\Project\New Folder\app_iot\AppWinform-main\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

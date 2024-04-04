@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AppWinform_main")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f4553cda4b226f18f53d49c5c8475111ada6785")]
 [assembly: System.Reflection.AssemblyProductAttribute("AppWinform_main")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AppWinform_main")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
